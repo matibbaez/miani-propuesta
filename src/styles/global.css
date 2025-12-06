@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0b1120;
+  --color-secondary: #1e293b;
+  --color-accent: #c5a059;
+  --color-accent-light: #e6c888;
+  --color-surface: #f8fafc;
+  
+  --font-serif: "Libre Baskerville", serif;
+  --font-sans: "Manrope", sans-serif;
+}
+
+/* Recomendado por Lenis para asegurar performance */
+html.lenis, html.lenis body {
+  height: auto;
+}
+html {
+  scroll-behavior: smooth; /* <--- BORRAR ESTO SI LO TIENES */
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important; /* Lenis maneja el scroll ahora */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Estilos Base */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+/* 1. ANIMACIONES DE ENTRADA (Keyframes) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clases de utilidad para usar en el HTML */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  opacity: 0; /* Empieza invisible */
+}
+
+/* Delays para que aparezcan uno tras otro (efecto cascada) */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
+
+
+/* 2. CLASES PARA EL SCROLL REVEAL (Se activan con JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-ken-burns {
+  animation: kenBurns 20s ease-out infinite alternate;
+}
+
+/* Animación para la línea de scroll */
+@keyframes scrollLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}

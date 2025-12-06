@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../layouts/Navbar.astro';
+import Footer from '../layouts/Footer.astro';
+---
+
+<Layout title="Inicio">
+  <Navbar />
+
+  <main>
+    <section id="inicio" class="relative h-screen min-h-[600px] flex items-center overflow-hidden bg-primary">
+      
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2301&auto=format&fit=crop" 
+          alt="Estudio Jurídico Interior" 
+          class="w-full h-full object-cover opacity-40 animate-ken-burns will-change-transform" 
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent z-10"></div>
+      </div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-6 w-full pt-20">
+        
+        <div class="max-w-3xl space-y-8"> <div class="animate-fade-in-up">
+            <span class="inline-block py-1 px-3 border border-white/20 rounded-sm bg-white/5 backdrop-blur-md text-[10px] font-bold tracking-[0.2em] text-accent uppercase">
+              Miani & Galceran
+            </span>
+          </div>
+
+          <h1 class="animate-fade-in-up delay-100 text-4xl md:text-6xl text-white font-serif leading-tight">
+            Solvencia Legal. <br/>
+            <span class="text-accent italic font-light">Respaldo Patrimonial.</span>
+          </h1>
+
+          <p class="animate-fade-in-up delay-200 text-lg text-slate-300 leading-relaxed font-light border-l-2 border-accent/50 pl-6 max-w-2xl">
+            Unificamos la estrategia jurídica en <strong>Derecho Civil y Laboral</strong> con la gestión inteligente de <strong>Seguros</strong>. <br>
+            Protección integral para su familia y sus negocios.
+          </p>
+
+          <div class="animate-fade-in-up delay-300 flex flex-wrap gap-4 pt-6">
+            <a href="#contacto" class="relative overflow-hidden px-8 py-4 bg-white text-primary font-bold uppercase tracking-widest text-xs rounded-sm group hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all">
+              <span class="relative z-10 group-hover:text-accent transition-colors">Agendar Cita</span>
+            </a>
+            
+            <a href="#estudio" class="px-8 py-4 border border-white/20 text-white uppercase tracking-widest text-xs font-bold rounded-sm hover:bg-white/5 transition-all">
+              Conocer Firma
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="absolute bottom-10 left-6 md:left-auto md:right-10 flex flex-col items-center gap-2 animate-fade-in-up delay-700 opacity-60">
+        <span class="text-[10px] text-slate-400 uppercase tracking-widest [writing-mode:vertical-lr]">Scroll</span>
+        <div class="w-[1px] h-12 bg-white/20 overflow-hidden">
+          <div class="w-full h-1/2 bg-accent animate-scroll-line"></div>
+        </div>
+      </div>
+
+    </section>
+    <section id="estudio" class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="order-2 md:order-1">
+            <h2 class="text-sm font-bold text-accent uppercase tracking-widest mb-2">Nuestra Firma</h2>
+            <h3 class="text-3xl md:text-4xl font-serif text-primary mb-6">Tradición legal y visión de futuro.</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed">
+              En <strong>Miani & Galceran</strong> entendemos que detrás de cada expediente hay una historia, una familia o un patrimonio que proteger. 
+            </p>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+              Nos diferenciamos por ofrecer un enfoque híbrido único en Morón: combinamos la agresividad estratégica necesaria en litigios <strong>Civiles y Laborales</strong> con la prevención y planificación que brinda nuestra división de <strong>Seguros</strong>.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-accent pl-4">
+                <h4 class="font-bold text-primary text-lg">Trato Directo</h4>
+                <p class="text-sm text-slate-500">Sin intermediarios. Usted habla con sus abogados.</p>
+              </div>
+              <div class="border-l-4 border-accent pl-4">
+                <h4 class="font-bold text-primary text-lg">Honorarios Claros</h4>
+                <p class="text-sm text-slate-500">Transparencia desde la primera consulta.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="order-1 md:order-2 relative">
+            <div class="absolute -top-4 -right-4 w-2/3 h-2/3 bg-accent/10 -z-10 rounded-sm"></div>
+            <div class="absolute -bottom-4 -left-4 w-2/3 h-2/3 bg-primary/5 -z-10 rounded-sm"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop" 
+              alt="Reunión de abogados" 
+              class="rounded-sm shadow-xl w-full object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="juridico" class="py-24 bg-surface relative">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-accent font-bold tracking-widest text-xs uppercase">Área Legal</span>
+          <h2 class="text-3xl md:text-4xl font-serif text-primary mt-2 mb-4">Especialistas en Derecho</h2>
+          <div class="w-16 h-1 bg-accent mx-auto mb-4"></div>
+          <p class="text-slate-600">Representación sólida en los momentos que definen su tranquilidad.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <article class="bg-white p-8 shadow-sm border border-slate-100 hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+            <div class="w-12 h-12 bg-primary text-white flex items-center justify-center rounded-sm mb-6 group-hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-primary mb-4">Derecho Laboral</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Despidos sin causa</span></li>
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Accidentes (ART)</span></li>
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Trabajo en negro</span></li>
+            </ul>
+          </article>
+
+          <article class="bg-white p-8 shadow-sm border border-slate-100 hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+            <div class="w-12 h-12 bg-primary text-white flex items-center justify-center rounded-sm mb-6 group-hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-primary mb-4">Derecho Civil</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Sucesiones</span></li>
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Contratos y Alquileres</span></li>
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Daños y Perjuicios</span></li>
+            </ul>
+          </article>
+
+          <article class="bg-white p-8 shadow-sm border border-slate-100 hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+            <div class="w-12 h-12 bg-primary text-white flex items-center justify-center rounded-sm mb-6 group-hover:bg-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif text-primary mb-4">Familia</h3>
+            <ul class="space-y-2 text-sm text-slate-600">
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Divorcios Express</span></li>
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Cuota Alimentaria</span></li>
+              <li class="flex items-center gap-2 text-accent">✓ <span class="text-slate-600">Régimen de visitas</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="seguros" class="py-24 bg-primary text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#c5a059 1px, transparent 1px); background-size: 30px 30px;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          
+          <div class="space-y-8">
+            <div class="inline-block px-3 py-1 border border-accent rounded-full">
+              <span class="text-accent text-xs font-bold uppercase tracking-widest">Unidad de Seguros</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif leading-tight">
+              Proteja lo que <br/>
+              <span class="text-accent italic">tanto le costó construir.</span>
+            </h2>
+            <p class="text-slate-300 text-lg leading-relaxed">
+              Como Productores Asesores Matriculados (SSN), no solo vendemos pólizas; diseñamos esquemas de protección a medida para su vida, su familia y sus bienes. Trabajamos con las compañías líderes del mercado.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="flex gap-4 p-4 border border-white/5 bg-white/5 rounded-sm hover:bg-white/10 transition-colors">
+                 <div class="text-2xl">🚗</div>
+                 <div>
+                    <h4 class="font-bold text-white">Patrimoniales</h4>
+                    <p class="text-sm text-slate-400">Automotor, Hogar, Integral de Comercio y Consorcio.</p>
+                 </div>
+              </div>
+              <div class="flex gap-4 p-4 border border-white/5 bg-white/5 rounded-sm hover:bg-white/10 transition-colors">
+                 <div class="text-2xl">👨‍👩‍👧</div>
+                 <div>
+                    <h4 class="font-bold text-white">Personas y Vida</h4>
+                    <p class="text-sm text-slate-400">Seguros de Vida, Retiro y Accidentes Personales.</p>
+                 </div>
+              </div>
+            </div>
+
+            <a href="#contacto" class="inline-block mt-4 text-accent border-b border-accent hover:text-white hover:border-white transition-colors pb-1 uppercase text-sm font-bold tracking-wider">
+              Solicitar Cotización sin cargo →
+            </a>
+          </div>
+
+          <div class="bg-gradient-to-br from-secondary to-primary p-10 rounded-sm border border-white/10 text-center">
+            <h3 class="font-serif text-xl mb-8 text-slate-200">Respaldo de Primer Nivel</h3>
+            <div class="grid grid-cols-2 gap-8 opacity-70">
+                <div class="h-12 flex items-center justify-center border border-white/10 rounded bg-white/5">Allianz</div>
+                <div class="h-12 flex items-center justify-center border border-white/10 rounded bg-white/5">Zurich</div>
+                <div class="h-12 flex items-center justify-center border border-white/10 rounded bg-white/5">Sancor</div>
+                <div class="h-12 flex items-center justify-center border border-white/10 rounded bg-white/5">Federación</div>
+                <div class="h-12 flex items-center justify-center border border-white/10 rounded bg-white/5">Mapfre</div>
+                <div class="h-12 flex items-center justify-center border border-white/10 rounded bg-white/5">Mercantil</div>
+            </div>
+            <p class="text-xs text-slate-500 mt-8">
+              * Trabajamos con múltiples compañías para asegurar el mejor costo-beneficio.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-surface">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-serif text-center text-primary mb-12">Preguntas Frecuentes</h2>
+        
+        <div class="space-y-4">
+          <details class="group bg-white rounded-sm shadow-sm border border-slate-200 open:ring-1 open:ring-accent/50">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-primary">
+              <span>¿La primera consulta tiene costo?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+              </span>
+            </summary>
+            <div class="text-slate-600 px-6 pb-6 pt-0 leading-relaxed text-sm">
+              Dependiendo del tipo de caso. Para consultas sobre Seguros y accidentes laborales, el asesoramiento inicial es gratuito. Para casos civiles complejos, coordinamos un honorario de consulta accesible que se bonifica si avanzamos con el caso.
+            </div>
+          </details>
+
+          <details class="group bg-white rounded-sm shadow-sm border border-slate-200 open:ring-1 open:ring-accent/50">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-primary">
+              <span>¿Qué documentación necesito para una sucesión?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+              </span>
+            </summary>
+            <div class="text-slate-600 px-6 pb-6 pt-0 leading-relaxed text-sm">
+              Básicamente: Partida de defunción, partidas de nacimiento de los herederos y títulos de propiedad de los bienes. Si le falta algo, nosotros nos encargamos de gestionarlo ante el Registro Civil.
+            </div>
+          </details>
+
+          <details class="group bg-white rounded-sm shadow-sm border border-slate-200 open:ring-1 open:ring-accent/50">
+            <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-primary">
+              <span>¿Puedo asegurar mi auto si no soy el titular?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+              </span>
+            </summary>
+            <div class="text-slate-600 px-6 pb-6 pt-0 leading-relaxed text-sm">
+              Sí, se puede, aunque es recomendable realizar la transferencia. Contáctenos y le explicaremos cómo proteger el bien correctamente para evitar problemas ante un siniestro.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="py-24 bg-white relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-24">
+          
+          <div>
+            <h2 class="text-4xl font-serif text-primary mb-6">Hablemos.</h2>
+            <p class="text-slate-600 mb-8 text-lg">
+              Ya sea por una urgencia legal o para planificar su cobertura de seguros, estamos a disposición.
+            </p>
+            
+            <div class="space-y-6">
+               <div class="flex items-start gap-4">
+                 <div class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-accent shrink-0">📍</div>
+                 <div>
+                   <h4 class="font-bold text-primary">Nuestra Oficina</h4>
+                   <p class="text-slate-500 text-sm">Calle Falsa 123, Piso 4, Oficina B<br>Morón Oeste, Buenos Aires.</p>
+                 </div>
+               </div>
+               
+               <div class="flex items-start gap-4">
+                 <div class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-accent shrink-0">📞</div>
+                 <div>
+                   <h4 class="font-bold text-primary">Teléfonos</h4>
+                   <p class="text-slate-500 text-sm">Llamadas: (011) 4242-0000</p>
+                   <p class="text-slate-500 text-sm">WhatsApp: +54 9 11 5555-6666</p>
+                 </div>
+               </div>
+
+               <div class="flex items-start gap-4">
+                 <div class="w-10 h-10 bg-surface rounded-full flex items-center justify-center text-accent shrink-0">🕒</div>
+                 <div>
+                   <h4 class="font-bold text-primary">Horarios</h4>
+                   <p class="text-slate-500 text-sm">Lun a Vie: 09:00 - 18:00 hs</p>
+                   <p class="text-slate-500 text-sm">Sábados con cita previa.</p>
+                 </div>
+               </div>
+            </div>
+          </div>
+
+          <form class="bg-surface p-8 rounded-sm border border-slate-200 shadow-sm">
+            <h3 class="text-xl font-serif mb-6 text-primary">Envíenos un mensaje</h3>
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                 <div class="space-y-1">
+                   <label class="text-xs font-bold text-slate-500 uppercase">Nombre</label>
+                   <input type="text" class="w-full p-3 bg-white border border-slate-200 focus:border-accent focus:outline-none transition-colors" />
+                 </div>
+                 <div class="space-y-1">
+                   <label class="text-xs font-bold text-slate-500 uppercase">Apellido</label>
+                   <input type="text" class="w-full p-3 bg-white border border-slate-200 focus:border-accent focus:outline-none transition-colors" />
+                 </div>
+              </div>
+              
+              <div class="space-y-1">
+                   <label class="text-xs font-bold text-slate-500 uppercase">Email</label>
+                   <input type="email" class="w-full p-3 bg-white border border-slate-200 focus:border-accent focus:outline-none transition-colors" />
+              </div>
+
+              <div class="space-y-1">
+                   <label class="text-xs font-bold text-slate-500 uppercase">Motivo</label>
+                   <select class="w-full p-3 bg-white border border-slate-200 focus:border-accent focus:outline-none transition-colors text-slate-600">
+                     <option>Consulta Jurídica</option>
+                     <option>Cotización Seguro Automotor</option>
+                     <option>Cotización Seguro Hogar/Comercio</option>
+                     <option>Otro</option>
+                   </select>
+              </div>
+
+              <div class="space-y-1">
+                   <label class="text-xs font-bold text-slate-500 uppercase">Mensaje</label>
+                   <textarea rows="4" class="w-full p-3 bg-white border border-slate-200 focus:border-accent focus:outline-none transition-colors"></textarea>
+              </div>
+
+              <button class="w-full bg-primary text-white font-bold py-4 hover:bg-accent hover:text-primary transition-all uppercase tracking-widest text-xs">
+                Enviar Consulta
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
