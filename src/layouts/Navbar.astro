@@ -7,44 +7,42 @@ const links = [
 ];
 ---
 
-<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent bg-transparent py-4">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500" id="header-container">
+<header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent py-4">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
     
-    <a href="#inicio" class="text-white font-serif text-2xl tracking-wide relative group flex items-center gap-1">
+    <a id="main-logo" href="/" class="text-white font-serif text-2xl tracking-wide relative group flex items-center gap-1 z-[60] transition-opacity duration-300">
       Miani <span class="text-accent text-3xl leading-none font-light group-hover:rotate-12 transition-transform duration-300">&</span> Galceran
     </a>
 
     <nav class="hidden md:flex items-center gap-8">
       {links.map(link => (
-        <a href={link.href} class="nav-link text-[13px] font-bold text-slate-300 hover:text-white transition-colors uppercase tracking-[0.15em] relative py-2">
+        <a href={link.href} class="text-[13px] font-bold text-slate-300 hover:text-white transition-colors uppercase tracking-[0.15em] relative py-2 group">
           {link.name}
           <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full"></span>
         </a>
       ))}
       <a href="#contacto" class="group relative px-6 py-3 bg-accent text-primary font-bold text-xs uppercase tracking-widest rounded-sm overflow-hidden transition-all hover:bg-white hover:shadow-[0_0_15px_rgba(197,160,89,0.3)]">
         <span class="relative z-10">Contacto</span>
-        <div class="absolute inset-0 h-full w-full scale-0 rounded-sm transition-all duration-300 group-hover:scale-100 group-hover:bg-white/10"></div>
       </a>
     </nav>
 
-    <button id="menu-toggle" class="md:hidden z-50 focus:outline-none w-12 h-12 flex flex-col justify-center items-center gap-[6px] group" aria-label="Menu">
+    <button id="menu-toggle" class="md:hidden z-[9999] focus:outline-none w-12 h-12 flex flex-col justify-center items-center gap-[6px] group" aria-label="Menu">
       <span class="line line-1 w-7 h-[2px] bg-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] origin-center"></span>
       <span class="line line-2 w-7 h-[2px] bg-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"></span>
       <span class="line line-3 w-7 h-[2px] bg-white transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] origin-center"></span>
     </button>
   </div>
 
-  <div id="mobile-menu" class="fixed inset-0 bg-primary/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center translate-x-full transition-transform duration-700 cubic-bezier(0.7,0,0.3,1) md:hidden">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent to-transparent pointer-events-none"></div>
-    
-    <nav class="flex flex-col gap-6 text-center relative z-10">
+  <div id="mobile-menu" class="fixed inset-0 bg-primary z-[9990] flex flex-col items-center justify-center translate-x-full transition-transform duration-300 md:hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-800/20 to-transparent pointer-events-none"></div>
+
+    <nav class="flex flex-col gap-8 text-center relative z-[9991]">
       {links.map((link, index) => (
-        // Agregamos un delay escalonado basado en el índice
-        <a href={link.href} class="mobile-link text-4xl font-serif text-white/80 hover:text-accent transition-all duration-300 opacity-0 translate-y-4" style={`transition-delay: ${index * 100}ms`}>
+        <a href={link.href} class="mobile-link text-3xl font-serif text-white hover:text-accent transition-all duration-300 opacity-0 translate-y-4" style={`transition-delay: ${index * 50}ms`}>
           {link.name}
         </a>
       ))}
-      <a href="#contacto" class="mobile-link mt-8 px-10 py-4 border border-accent text-accent font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-accent hover:text-primary transition-colors opacity-0 translate-y-4" style={`transition-delay: ${links.length * 100 + 100}ms`}>
+      <a href="#contacto" class="mobile-link mt-8 px-10 py-4 border border-accent text-accent font-bold uppercase tracking-widest text-sm rounded-sm hover:bg-accent hover:text-primary transition-colors opacity-0 translate-y-4" style={`transition-delay: ${links.length * 50 + 100}ms`}>
         Solicitar Consulta
       </a>
     </nav>
@@ -52,76 +50,99 @@ const links = [
 </header>
 
 <style>
-  /* Animación del Hamburger a Cruz Suave */
-  #menu-toggle.is-active .line-1 {
-    transform: translateY(8px) rotate(45deg);
-    background-color: var(--color-accent);
-  }
-  #menu-toggle.is-active .line-2 {
-    opacity: 0;
-    transform: translateX(-20px); /* Se va más lejos */
-  }
-  #menu-toggle.is-active .line-3 {
-    transform: translateY(-8px) rotate(-45deg);
-    background-color: var(--color-accent);
+  /* ESTADO SCROLLED (Barra Oscura al bajar)
+    Usamos !important para asegurar que pise cualquier clase de Tailwind
+  */
+  :global(#main-header.scrolled) {
+    background-color: #0b1120 !important; /* Color Primary Sólido */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
 
-  /* Animación de entrada de los links móviles */
-  #mobile-menu.is-open .mobile-link {
-    opacity: 1;
-    transform: translateY(0);
+  /* ESTADO MENU ABIERTO (Forzar fondo sólido en el header mismo)
+    Esto arregla el problema de "transparencia al bajar"
+  */
+  :global(#main-header.menu-open) {
+    background-color: #0b1120 !important; /* Color Primary Sólido */
+    border-color: transparent !important;
   }
+
+  /* Ocultar Logo */
+  :global(.logo-hidden) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Animaciones */
+  #menu-toggle.is-active .line-1 { transform: translateY(8px) rotate(45deg); background-color: var(--color-accent); }
+  #menu-toggle.is-active .line-2 { opacity: 0; transform: translateX(-20px); }
+  #menu-toggle.is-active .line-3 { transform: translateY(-8px) rotate(-45deg); background-color: var(--color-accent); }
+  #mobile-menu.is-open .mobile-link { opacity: 1; transform: translateY(0); }
 </style>
 
 <script is:inline>
+  const header = document.getElementById('main-header');
+  const logo = document.getElementById('main-logo');
   const btn = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
   const links = document.querySelectorAll('.mobile-link');
-  const header = document.getElementById('main-header');
-  const headerContainer = document.getElementById('header-container');
 
-  // --- Lógica del Menú Móvil ---
-  function toggleMenu() {
-    const isOpen = menu.classList.contains('translate-x-full');
-    
-    btn.classList.toggle('is-active');
-    menu.classList.toggle('translate-x-full');
-    menu.classList.toggle('is-open'); // Para disparar las animaciones CSS
-    
-    // Bloquear scroll
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-  }
-
-  if (btn && menu) {
-    btn.addEventListener('click', toggleMenu);
-
-    // Cerrar al hacer click en un link
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        if (!menu.classList.contains('translate-x-full')) {
-           toggleMenu();
-        }
-      });
-    });
-  }
-
-  // --- Lógica del Header Dinámico al Scrollear ---
-  function updateHeaderState() {
+  // 1. CONTROL DEL SCROLL
+  function checkScroll() {
     if (!header) return;
     
-    // Si bajamos más de 20px...
-    if (window.scrollY > 20) {
-      header.classList.remove('bg-transparent', 'border-transparent', 'py-4');
-      // Añadimos fondo oscuro, borroso, borde sutil y reducimos el padding
-      header.classList.add('bg-primary/90', 'backdrop-blur-md', 'border-white/5', 'shadow-sm', 'py-2');
+    // Si el menú está abierto, NO tocamos las clases de scroll (dejamos que mande el menú)
+    if (menu?.classList.contains('is-open')) return;
+
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
     } else {
-      // Si estamos arriba de todo, volvemos a transparente
-      header.classList.add('bg-transparent', 'border-transparent', 'py-4');
-      header.classList.remove('bg-primary/90', 'backdrop-blur-md', 'border-white/5', 'shadow-sm', 'py-2');
+      header.classList.remove('scrolled');
     }
   }
 
-  window.addEventListener('scroll', updateHeaderState);
-  // Ejecutar al cargar por si se recarga la página ya scrolleada
-  document.addEventListener('DOMContentLoaded', updateHeaderState);
+  // 2. ABRIR/CERRAR MENÚ
+  function toggleMenu() {
+    if (!btn || !menu) return;
+    
+    const isOpening = !menu.classList.contains('is-open');
+    
+    // Toggle Clases
+    btn.classList.toggle('is-active');
+    menu.classList.toggle('translate-x-full');
+    menu.classList.toggle('is-open');
+    logo.classList.toggle('logo-hidden');
+    
+    // Toggle Clase Especial en el Header (Para forzar fondo negro)
+    header.classList.toggle('menu-open');
+
+    // Bloquear Scroll del Body
+    document.body.style.overflow = isOpening ? 'hidden' : '';
+
+    if (!isOpening) {
+      // Si cerramos, chequeamos el scroll de nuevo para ver si dejamos la barra oscura o transparente
+      checkScroll();
+    }
+  }
+
+  // Event Listeners
+  window.addEventListener('scroll', checkScroll, { passive: true });
+  window.addEventListener('resize', checkScroll);
+  
+  // Inicializar al cargar
+  checkScroll();
+
+  if (btn) {
+    btn.addEventListener('click', toggleMenu);
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (menu && menu.classList.contains('is-open')) {
+        toggleMenu();
+      }
+    });
+  });
 </script>
